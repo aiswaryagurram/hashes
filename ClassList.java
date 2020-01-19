@@ -1,34 +1,46 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
 public class ClassList {
-	 Map<String,String> classList =new HashMap<String,String>();
-	 public void ClassGrades() {
-		 classList.put("Bob","A");
-		 classList.put("Mary","C");
-		 classList.put("Sarah","B");
-		 classList.put("Philip","A");
-		 classList.put("Greg","F");
-		  }
-	 public void printClassList() {
-		 Iterator<Entry<String,String>> entries=classList.entrySet().iterator();
-		while(entires.hasNext()) {
-			 Entry<String,String>entry = entries.next();
-			 System.out.println("key=" +entry.getKey() +",Value="+entry.getValue());
-		 }
-	 }
-	 public void printClassList2() {
-		 for(Map.Entry<String, String> entry: ClassList.entrySet()) {
-			 System.out.println("key=" +entry.getKey() +",Value="+entry.getValue());
-		 }
-		 for (String key : classList.keySet()){
-			 System.out.println("Key ="+key);
-		 }
-		 for (String value : classList.values()){
-			 System.out.println("value ="+value );
-	     }
-	
-	}
-	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 ClassGrades myClassList= new ClassGrades();
-		 myClassList.printClasslist();
-        }
+		ClassList classgrades = new ClassList();
+		classgrades.printClassList();
+	}
+	Map<String,String> classgrades = new HashMap<String,String>();
+	public ClassList() {
+		classgrades.put("Bob","A");
+		classgrades.put("Mary","C");
+		classgrades.put("Sarah","B");
+		classgrades.put("Philip","A");
+		classgrades.put("Greg","F");
+	}
+
+	public void printClassList() {
+	Iterator<Entry<String, String>> entries = classgrades.entrySet().iterator();
+	while (entries.hasNext()) {
+	Entry<String, String> entry = entries.next();
+	System.out.println("Key = " +entry.getKey() + " ,Value = " + entry.getValue());
+	}
+	}
+
+
+	public void printClassList2() {
+	for(Map.Entry<String, String> entry : classgrades.entrySet()) {
+	   System.out.println("Key = " +entry.getKey() + " ,Value = " + entry.getValue());
+	}
+
+	for (String key : classgrades.keySet()) {
+	System.out.println("Key = " + key);
+	}
+
+	for (String value : classgrades.values()) {
+	System.out.println("Values = " + value);
+	}
+
+	}
+	
+}
